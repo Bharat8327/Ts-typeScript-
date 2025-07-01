@@ -1,0 +1,105 @@
+installation typeScript globally =>npm i typescript -g
+check installation of the typeScript => tsc --version
+run typeScript then run command  => tsc file_name (run this cmd then create copy of the ts file convert to js files)
+
+
+set up typeScript project =>
+what is tsConfig.json =>A tsconfig.json file is a configuration file used in TypeScript projects to define project settings and guide the TypeScript compiler (tsc) on how to compile the TypeScript code into JavaScript. 
+
+cmd=> tsc --init
+
+run the cmd => tsc --watch
+==============================================================================================================================================================================================================
+
+Basic Types in TS 
+• Primative data types =>number , string , boolean
+• Arrays
+• Tuples
+• Enums
+• Any , Unknown, Void, Null, Undefined, Never
+
+
+
+
+
+
+Arrays =>
+
+
+
+
+
+
+
+Tuples => 
+
+let arr:[number,string] = [1,2,323,'hey','ram']
+
+
+
+
+
+Enums =>(enumerations)
+
+enum UserRole {
+    ADMIN = "admin",
+    USER = "user",
+    SUPER_ADMIN = 'super_admin"
+}
+
+
+any:=>Disables Type Checking: any completely disables type checking for the variable. You can assign any value to it, and perform any operation on it without TypeScript raising an error.
+Potential Runtime Errors: Because of the lack of type checking, any can lead to runtime errors if you try to perform operations on the variable that are not compatible with its actual type.
+Example: TypeScript
+    let x: any = 10;
+    x = "hello"; // No error
+    x.toUpperCase(); // No error at compile time, but could cause a runtime error
+
+unknown:=> Requires Type Checking: unknown is a safer alternative to any. It forces you to perform explicit type checks or assertions before performing operations on the variable.
+Promotes Type Safety: By requiring type checks, unknown helps prevent runtime errors and encourages safer coding practices.
+Example: TypeScript
+    let y: unknown = 10;
+    // y.toUpperCase(); // Compile-time error
+    if (typeof y === 'string') {
+        y.toUpperCase(); // No error because of the type check
+    }
+
+
+
+
+
+function => void number string boolean
+
+
+// function return nothing used that
+function abcd(): void {
+  console.log('return Nothing use that type');
+}
+// if funtion return somethin then use this format
+function mul(): number {
+  return 12;
+}
+
+
+
+Null => 
+let x: string | null;
+x = 'sdfa'; // that is valid
+// x = 12;// that is not valid  error :Type 'number' is not assignable to type 'string'
+
+
+
+undefined => 
+let y: undefined;
+
+
+
+
+Never => never is genrally not used (never used genrally used when throw error not exucted remain code then we are used never )
+function xyz(): never {
+  while (true) {}
+}
+xyz();
+console.log('never exuted this if we are user never means ');
+
+// if we are not used never then console.log() line exucted otherwise not
