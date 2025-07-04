@@ -103,3 +103,149 @@ xyz();
 console.log('never exuted this if we are user never means ');
 
 // if we are not used never then console.log() line exucted otherwise not
+
+
+
+
+// type narrowying =>
+
+
+
+==============================================================================================================================================================================================================
+
+Type Inference =>
+• Understanding type Inference , ex => let a ='ram'; (auto type know the can Inference)
+• type annotations , ex => let x:number | boolean| string; (define what is type then it is called annotations)
+
+==============================================================================================================================================================================================================
+
+Interfaces and type Aliases =>
+• Defineing Interfaces =>
+
+interface User {
+  name: string;
+  email: string;
+  password: string;
+  gender?: string;
+}
+function user(obj: User) {
+  console.log(obj);
+}
+user({ name: 'krish', email: 'patel@gmail.com', password: 'ram@gmail.com' });
+
+
+
+
+interface abcd{
+  name:string;
+}
+interface abcd{
+  email:string
+}
+
+both are combine and make online one interface => 
+ex=> interface abcd{
+  name:string;
+  email:string
+}
+
+function abd(obj:abcd){
+  obj.name="ram";
+  obj.email="ram@gmail.com
+}
+
+
+
+
+xxxxxxx======================Learn-Day-2=========================================================================================================================xxxxxxx
+Classes and Object =>
+• class Definition: A class in TypeScript is a blueprint for creating objects with specific properties and methods.
+  Example:
+  class Person {
+    name: string;
+    constructor(name: string) {
+    this.name = name;
+    }
+  }
+
+• Constructor: A special method for creating and initializing objects created with a class.
+  Example:
+  class Car {
+    model: string;
+    constructor(model: string) {
+    this.model = model;
+    }
+  }
+
+• Access modifiers (public, private, protected): Keywords that control the visibility of class members.
+  - public: Accessible from anywhere (default).
+  - private: Accessible only within the class.
+  - protected: Accessible within the class and its subclasses.
+  Example:
+  class Example {
+    public a: number;
+    private b: number;
+    protected c: number;
+  }
+
+• ReadOnly Properties: Properties that can only be assigned once, usually in the constructor.
+  Example:
+  class Book {
+    readonly title: string;
+    constructor(title: string) {
+    this.title = title;
+    }
+  }
+
+• Optional Properties: Properties that may or may not be present in a class.
+  Example:
+  class User {
+    name: string;
+    age?: number; // optional
+    constructor(name: string, age?: number) {
+    this.name = name;
+    this.age = age;
+    }
+  }
+
+• Parameter Properties: Shorthand for declaring and initializing properties directly in the constructor parameters.
+  Example:
+  class Point {
+    constructor(public x: number, public y: number) {}
+  }
+
+• Getters and Setters: Special methods to get and set the values of private properties.
+  Example:
+  class Employee {
+    private _salary: number = 0;
+    get salary(): number {
+    return this._salary;
+    }
+    set salary(value: number) {
+    if (value > 0) this._salary = value;
+    }
+  }
+
+• Static members: Properties or methods that belong to the class itself, not to instances.
+  Example:
+  class MathUtil {
+    static PI = 3.14;
+    static square(x: number) {
+    return x * x;
+    }
+  }
+
+• Abstract classes and methods: Abstract classes cannot be instantiated directly and may contain abstract methods that must be implemented by subclasses.
+  Example:
+  abstract class Animal {
+    abstract makeSound(): void;
+    move(): void {
+    console.log("Moving...");
+    }
+  }
+  class Dog extends Animal {
+    makeSound() {
+    console.log("Woof!");
+    }
+  }
+
